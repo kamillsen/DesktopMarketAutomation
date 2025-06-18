@@ -1,0 +1,16 @@
+# Visual Studio
+.vs/
+bin/
+obj/
+*.user
+*.suo
+
+# Paket klasörleri
+packages/
+*.nupkg
+*.lock.json
+
+# Geri dönüşüm / geçici
+*.log
+*.tmp
+*.cache

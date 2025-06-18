@@ -1,0 +1,135 @@
+﻿<Window x:Class="MarketAutomation.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Market Otomasyon Sistemi" Height="720" Width="1280"
+        WindowStartupLocation="CenterScreen"
+        Background="#F5F5F5">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Üst Menü -->
+        <Menu Grid.Row="0" Background="#2196F3">
+            <MenuItem Header="Dosya" Foreground="White">
+                <MenuItem Header="Yeni Satış" Click="NewSale_Click"/>
+                <MenuItem Header="Ürün Ekle" Click="AddProduct_Click"/>
+                <MenuItem Header="Stok Güncelle" Click="UpdateStock_Click"/>
+                <Separator/>
+                <MenuItem Header="Çıkış" Click="Exit_Click"/>
+            </MenuItem>
+            <MenuItem Header="Raporlar" Foreground="White">
+                <MenuItem Header="Günlük Satış Raporu" Click="DailyReport_Click"/>
+                <MenuItem Header="Haftalık Satış Raporu" Click="WeeklyReport_Click"/>
+                <MenuItem Header="Aylık Satış Raporu" Click="MonthlyReport_Click"/>
+            </MenuItem>
+            <MenuItem Header="Ayarlar" Foreground="White">
+                <MenuItem Header="Kullanıcı Yönetimi" Click="UserManagement_Click"/>
+                <MenuItem Header="Sistem Ayarları" Click="SystemSettings_Click"/>
+            </MenuItem>
+            <MenuItem Header="Yardım" Foreground="White">
+                <MenuItem Header="Kullanım Kılavuzu" Click="Help_Click"/>
+                <MenuItem Header="Hakkında" Click="About_Click"/>
+            </MenuItem>
+        </Menu>
+
+        <!-- Ana İçerik -->
+        <Grid Grid.Row="1" Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Sol Menü -->
+            <StackPanel Grid.Column="0" Background="White" Margin="0,0,20,0">
+                <Button Content="Satış İşlemleri" 
+                        Height="50" Margin="10" 
+                        Background="#2196F3" 
+                        Foreground="White"
+                        Click="Sales_Click"/>
+
+                <Button Content="Ürün Yönetimi" 
+                        Height="50" Margin="10" 
+                        Background="#4CAF50" 
+                        Foreground="White"
+                        Click="Products_Click"/>
+
+                <Button Content="Stok Takibi" 
+                        Height="50" Margin="10" 
+                        Background="#FF9800" 
+                        Foreground="White"
+                        Click="Stock_Click"/>
+
+                <Button Content="Raporlar" 
+                        Height="50" Margin="10" 
+                        Background="#9C27B0" 
+                        Foreground="White"
+                        Click="Reports_Click"/>
+
+                <Button Content="Kullanıcılar" 
+                        Height="50" Margin="10" 
+                        Background="#607D8B" 
+                        Foreground="White"
+                        Click="Users_Click"/>
+            </StackPanel>
+
+            <!-- Sağ İçerik -->
+            <Grid Grid.Column="1" Background="White">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Başlık -->
+                <TextBlock Text="Hoş Geldiniz" 
+                         FontSize="24" 
+                         FontWeight="Bold" 
+                         Margin="20"
+                         Foreground="#333333"/>
+
+                <!-- İçerik Alanı -->
+                <Grid Grid.Row="1" Margin="20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Hızlı İşlemler -->
+                    <WrapPanel Grid.Row="0" Margin="0,0,0,20">
+                        <Button Content="Yeni Satış" 
+                                Width="150" Height="40" 
+                                Margin="0,0,10,0"
+                                Background="#2196F3" 
+                                Foreground="White"
+                                Click="QuickSale_Click"/>
+
+                        <Button Content="Ürün Ekle" 
+                                Width="150" Height="40" 
+                                Margin="0,0,10,0"
+                                Background="#4CAF50" 
+                                Foreground="White"
+                                Click="QuickAddProduct_Click"/>
+
+                        <Button Content="Stok Güncelle" 
+                                Width="150" Height="40" 
+                                Margin="0,0,10,0"
+                                Background="#FF9800" 
+                                Foreground="White"
+                                Click="QuickUpdateStock_Click"/>
+                    </WrapPanel>
+
+                    <!-- Ana İçerik -->
+                    <Grid Grid.Row="1">
+                        <TextBlock Text="Lütfen sol menüden bir işlem seçin veya hızlı işlem butonlarını kullanın."
+                                 HorizontalAlignment="Center"
+                                 VerticalAlignment="Center"
+                                 FontSize="16"
+                                 Foreground="#666666"/>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window> 

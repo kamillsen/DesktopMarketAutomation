@@ -1,0 +1,42 @@
+﻿<Window x:Class="MarketAutomation.Views.AddProductWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Yeni Ürün Ekle" Height="400" Width="400" WindowStartupLocation="CenterScreen">
+
+    <!-- Grid yapısı, içeriği düzenlemek için kullanılır -->
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Giriş alanları -->
+            <RowDefinition Height="*"/>
+            <!-- Kaydet butonu -->
+        </Grid.RowDefinitions>
+
+        <!-- Giriş Formu -->
+        <StackPanel Grid.Row="0" Margin="0,0,0,10">
+            <TextBlock Text="Barkod:"/>
+            <TextBox x:Name="txtBarcode" Margin="0,5"/>
+
+            <TextBlock Text="Ürün Adı:"/>
+            <TextBox x:Name="txtName" Margin="0,5"/>
+
+            <TextBlock Text="Fiyat:"/>
+            <TextBox x:Name="txtPrice" Margin="0,5"/>
+
+            <TextBlock Text="Stok:"/>
+            <TextBox x:Name="txtStock" Margin="0,5"/>
+
+            <TextBlock Text="Kategori:"/>
+            <TextBox x:Name="txtCategory" Margin="0,5"/>
+
+            <TextBlock Text="Açıklama:"/>
+            <TextBox x:Name="txtDescription" Margin="0,5"/>
+        </StackPanel>
+
+        <!-- Kaydet Butonu -->
+        <Button Grid.Row="1" Content="Kaydet" Width="100" Height="35"
+                HorizontalAlignment="Center"
+                Background="#4CAF50" Foreground="White"
+                Click="BtnSave_Click"/>
+    </Grid>
+</Window>

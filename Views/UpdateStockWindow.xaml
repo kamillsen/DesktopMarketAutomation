@@ -1,0 +1,36 @@
+﻿<Window x:Class="MarketAutomation.Views.UpdateStockWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Stok Güncelleme" Height="250" Width="400" WindowStartupLocation="CenterScreen">
+
+    <!-- Ana Grid düzeni: 3 satır - Barkod alanı, Miktar alanı, Buton -->
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Barkod -->
+            <RowDefinition Height="Auto"/>
+            <!-- Miktar -->
+            <RowDefinition Height="*"/>
+            <!-- Buton -->
+        </Grid.RowDefinitions>
+
+        <!-- Barkod Girişi -->
+        <StackPanel Grid.Row="0" Margin="0,0,0,10">
+            <TextBlock Text="Barkod Numarası:"/>
+            <TextBox x:Name="txtBarcode" Margin="0,5"/>
+        </StackPanel>
+
+        <!-- Stok Miktarı Girişi -->
+        <StackPanel Grid.Row="1" Margin="0,0,0,10">
+            <TextBlock Text="Stok Artışı (+) veya Azalışı (-):"/>
+            <TextBox x:Name="txtQuantity" Margin="0,5"/>
+        </StackPanel>
+
+        <!-- Güncelleme Butonu -->
+        <Button Grid.Row="2" Content="Stok Güncelle" Width="150" Height="40"
+                HorizontalAlignment="Center"
+                Background="#FF9800" Foreground="White"
+                Click="BtnUpdate_Click"/>
+    </Grid>
+</Window>
+    
