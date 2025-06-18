@@ -16,13 +16,18 @@
         </StackPanel>
 
         <!-- Sepet Tablosu -->
-        <DataGrid x:Name="dgCart" Grid.Row="1" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True">
+        <DataGrid x:Name="dgCart"
+                  Grid.Row="1"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  IsReadOnly="False"
+                  CellEditEnding="dgCart_CellEditEnding">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Barkod" Binding="{Binding Barcode}" Width="*"/>
-                <DataGridTextColumn Header="Ürün" Binding="{Binding ProductName}" Width="*"/>
-                <DataGridTextColumn Header="Fiyat" Binding="{Binding UnitPrice}" Width="*"/>
-                <DataGridTextColumn Header="Adet" Binding="{Binding Quantity}" Width="*"/>
-                <DataGridTextColumn Header="Tutar" Binding="{Binding TotalPrice}" Width="*"/>
+                <DataGridTextColumn Header="Barkod" Binding="{Binding Barcode}" Width="*" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Ürün" Binding="{Binding ProductName}" Width="*" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Fiyat" Binding="{Binding UnitPrice}" Width="*" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Adet" Binding="{Binding Quantity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="*"/>
+                <DataGridTextColumn Header="Tutar" Binding="{Binding TotalPrice}" Width="*" IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>
 

@@ -106,6 +106,11 @@ namespace MarketAutomation.Views
             }
         }
 
+        private void dgCart_CellEditEnding(object sender, DataGridCellEditEndingEventArgs e)
+        {
+            // Düzenleme bitince toplamı güncelle
+            Dispatcher.Invoke(() => UpdateCart());
+        }
 
 
     }
